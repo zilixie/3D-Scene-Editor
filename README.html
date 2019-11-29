@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<link type="text/css" rel="stylesheet" href="css/github-markdown.css"/>
+<link rel="stylesheet" href="css/github-markdown.css">
+<style>
+.markdown-body {
+box-sizing: border-box;
+min-width: 200px;
+max-width: 980px;
+margin: 0 auto;
+padding: 45px;
+}
+</head>
+<body>
+
+<pre><code>@media (max-width: 767px) {
+    .markdown-body {
+        padding: 15px;
+    }
+}
+</code></pre>
+
+<p></style>
+<article class="markdown-body"></p>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "all"} } });
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<div style="display:none">
+<span class="math">\(\newcommand{\A}{\mat{A}}\)</span>
+<span class="math">\(\newcommand{\B}{\mat{B}}\)</span>
+<span class="math">\(\newcommand{\C}{\mat{C}}\)</span>
+<span class="math">\(\newcommand{\D}{\mat{D}}\)</span>
+<span class="math">\(\newcommand{\E}{\mat{E}}\)</span>
+<span class="math">\(\newcommand{\F}{\mat{F}}\)</span>
+<span class="math">\(\newcommand{\G}{\mat{G}}\)</span>
+<span class="math">\(\newcommand{\H}{\mat{H}}\)</span>
+<span class="math">\(\newcommand{\I}{\mat{I}}\)</span>
+<span class="math">\(\newcommand{\J}{\mat{J}}\)</span>
+<span class="math">\(\newcommand{\K}{\mat{K}}\)</span>
+<span class="math">\(\newcommand{\L}{\mat{L}}\)</span>
+<span class="math">\(\newcommand{\M}{\mat{M}}\)</span>
+<span class="math">\(\newcommand{\N}{\mat{N}}\)</span>
+<span class="math">\(\newcommand{\One}{\mathbf{1}}\)</span>
+<span class="math">\(\newcommand{\P}{\mat{P}}\)</span>
+<span class="math">\(\newcommand{\Q}{\mat{Q}}\)</span>
+<span class="math">\(\newcommand{\Rot}{\mat{R}}\)</span>
+<span class="math">\(\newcommand{\R}{\mathbb{R}}\)</span>
+<span class="math">\(\newcommand{\S}{\mathcal{S}}\)</span>
+<span class="math">\(\newcommand{\T}{\mat{T}}\)</span>
+<span class="math">\(\newcommand{\U}{\mat{U}}\)</span>
+<span class="math">\(\newcommand{\V}{\mat{V}}\)</span>
+<span class="math">\(\newcommand{\W}{\mat{W}}\)</span>
+<span class="math">\(\newcommand{\X}{\mat{X}}\)</span>
+<span class="math">\(\newcommand{\Y}{\mat{Y}}\)</span>
+<span class="math">\(\newcommand{\argmax}{\mathop{\text{argmax}}}\)</span>
+<span class="math">\(\newcommand{\argmin}{\mathop{\text{argmin}}}\)</span>
+<span class="math">\(\newcommand{\a}{\vec{a}}\)</span>
+<span class="math">\(\newcommand{\b}{\vec{b}}\)</span>
+<span class="math">\(\newcommand{\c}{\vec{c}}\)</span>
+<span class="math">\(\newcommand{\d}{\vec{d}}\)</span>
+<span class="math">\(\newcommand{\e}{\vec{e}}\)</span>
+<span class="math">\(\newcommand{\f}{\vec{f}}\)</span>
+<span class="math">\(\newcommand{\g}{\vec{g}}\)</span>
+<span class="math">\(\newcommand{\mat}[1]{\mathbf{#1}}\)</span>
+<span class="math">\(\newcommand{\min}{\mathop{\text{min}}}\)</span>
+<span class="math">\(\newcommand{\m}{\vec{m}}\)</span>
+<span class="math">\(\newcommand{\n}{\vec{n}}\)</span>
+<span class="math">\(\newcommand{\p}{\vec{p}}\)</span>
+<span class="math">\(\newcommand{\q}{\vec{q}}\)</span>
+<span class="math">\(\newcommand{\r}{\vec{r}}\)</span>
+<span class="math">\(\newcommand{\transpose}{{\mathsf T}}\)</span>
+<span class="math">\(\newcommand{\tr}[1]{\mathop{\text{tr}}{\left(#1\right)}}\)</span>
+<span class="math">\(\newcommand{\s}{\vec{s}}\)</span>
+<span class="math">\(\newcommand{\t}{\vec{t}}\)</span>
+<span class="math">\(\newcommand{\u}{\vec{u}}\)</span>
+<span class="math">\(\newcommand{\vec}[1]{\mathbf{#1}}\)</span>
+<span class="math">\(\newcommand{\x}{\vec{x}}\)</span>
+<span class="math">\(\newcommand{\y}{\vec{y}}\)</span>
+<span class="math">\(\newcommand{\z}{\vec{z}}\)</span>
+<span class="math">\(\newcommand{\0}{\vec{0}}\)</span>
+<span class="math">\(\renewcommand{\v}{\vec{v}}\)</span>
+<!-- https://github.com/mathjax/MathJax/issues/1766 -->
+<span class="math">\(\renewcommand{\hat}[1]{\widehat{#1}}\)</span>
+</div>
+
+<h1 id="computergraphics–raytracing">CS-GY-6533 Computer Graphic: 3D Scene Editor</h1>
+<p>A 3D scene editor implemented in C++ combined with OpenGL. It supports the functionalities of <code>insert</code>, <code>tranlate</code>, <code>colorize</code>, <code>rotate</code>, <code>scale</code>, <code>animate</code>, <code>delete</code> for triangle mesh objects in <code>.OFF</code> file format and it allows users to export scene into <code>.svg</code> files.</p>
+
+<h2 id="ds">How To Use</h2>
+<p>
+<code>O</code>: Start Translation mode.<br>
+<code>P</code>: Start Deletion mode.<br>
+<code>U</code>: Start Animation mode.<br>
+<code>SPACE</code>: Start/Stop the rotation of camera (by default the camera rotates arounf Y axis).<br>
+<code>&lt, &gt</code>: Change color for selected object.<br>
+<code>/</code>: Change projection (perspective or orthogonal)<br>
+<code>[,]</code>: change the shading method (vertex normal or face normal)<br>
+
+<code>&#8593;,&#8595;,&#8592;,&#8594;</code>: Move the camera on trackball up, down, left, right respectively by 2 degree.<br>
+<code>+,-</code>: Zoom in or out by 3%.<br>
+<code>J,M</code>: Rotate the selected Object by 2 degree clockwise or counter-clockwise around the Y axis.<br>
+<code>H,N</code>: Rotate the selected Object by 2 degree clockwise or counter-clockwise around the Z axis.<br>
+<code>G,B</code>: Rotate the selected Object by 2 degree clockwise or counter-clockwise around the X axis.<br>
+<code>K,L</code>: Scale the selected object up or down by 5% respectively.<br>
+
+<code>W,S</code>: Move the camera on Y axis.<br>
+<code>E,D</code>: Move the camera on X axis.<br>
+<code>R,F</code>: Move the camera on Z axis.<br>
+<code>Z</code>: Start the animation if the bezier curve for an object was constructed. <br>
+<code>X</code>: Take a screenshot and export scene to <code>.svg</code> file. <br>
+<code>Q</code>: Quit the program.</p>
+
+
+<h2 id="ds">Files & Data Structures</h2>
+<p>This section will introduce the main data structures that I defined for the general use in this Assignment. The following classes are defined in <code>Helper.h</code> and <code>Editor.h</code> file.</p>
+
+
+<blockquote>
+<code>VertexBufferObject</code><br>
+the VBO class for program. Vertex position for each object uploaded only once to the GPU.<br><br>
+<code>Program</code><br>
+where we bind vertex_shader and fragment_shader.<br><br>
+<code>Editor</code><br>
+<blockquote style="margin-bottom:0px;">
+<code>svg_export</code><br>
+<code>read_off</code><br>
+</blockquote>
+Editor class is responsible for implementing all functionalities. it has two sub modules for specific tasks. (svg_export for saving <code>.svg</code> file and read_off to load <code>.OFF</code> into Eigen Matrix).<br><br>
+<code>normal</code><br>
+normal is a util class that computes face normal and vertex normal given object.
+</blockquote>
+
+
+<h3>VertexBufferObject</h3>
+<p> A VBO is a data container that lives in the GPU memory. It uploads the vertex data we define as a matrix on CPU side and connects data with a position "slot" on GPU side. </p>
+<blockquote>
+<pre><code>class VertexBufferObject {
+public:
+    typedef unsigned int GLuint;
+    typedef int GLint;
+
+    GLuint id;
+    GLuint rows;
+    GLuint cols;
+
+    VertexBufferObject() : id(0), rows(0), cols(0) {}
+    void init();
+    void update(const Eigen::MatrixXf& M);
+    void bind();
+    void free();
+};</code></pre>
+</blockquote>
+
+	<p><code>update()</code> method of VBO will take in a <code>3 X N</code> Eigen Matrix of float and will update the values of the VBO Matrix. There are 2 VBO in this editor: one for vertex positions, where each column of the Eigen Matrix stores the position about a single vertex in 3D. The other one for vertex normals (more about normal in the normal section). </p>
+<blockquote>
+<p> Possible Matrix
+<pre><code>/* two triangles*/
+0.5,  0.5,   0.5    0.5,  0.5,   0.5   /* more triangles append here. */
+0.5,  0.5,  -0.5    0.5,  -0.5, -0.5
+0.5,  -0.5, -0.5    0.5,  0.5,  -0.5
+</code></pre>
+</p></blockquote>
+<p>The Matrix above can be interpreted as 2 triangles (or a mesh with 2 triangles).  When the program is running, these are the data that live in GPU. When new triangles are inserted, the matrix will expand to it right. Then whenever <code>update()</code> is called, the VBO on GPU gets updated.</p>
+<blockquote>
+<p> The Vertex Matrix for this application
+<pre><code>/*                      1st Object                    */   /*  2nd Object */   /*  3rd Object */
+/*1st triangle*/   /*2nd triangle*/    /*last triangle*/   /*all triangles*/   /*all triangles*/   /* more objects append. */
+0.5,  0.5,   0.5   0.5,  0.5,   0.5     0.5,  -0.5, -0.5
+0.5,  0.5,  -0.5   0.5,  -0.5, -0.5 ... -0.5, -0.5, -0.5
+0.5,  -0.5, -0.5   0.5,  0.5,  -0.5     0.5,  0.5,  -0.5
+</code></pre>
+</p></blockquote>
+<p>Because all the vertex will be uploaded only once to the GPU, at the initialization phase of application, all the required objects will be read into a matrix (vector of triangles) and uploaded to VBO. Whenever there are replications of a specific object, we keep the VBO unchanged and append a new model matrix to indicates a new inserted object. so no need to read <code>.OFF</code> into matrix and upload to VBO one more time.</p>
+
+<h3>Program</h3>
+<blockquote>
+<pre><code>class Program {
+public:
+    typedef unsigned int GLuint;
+    typedef int GLint;
+    GLuint vertex_shader;
+    GLuint fragment_shader;
+    GLuint program_shader;
+
+    Program() : vertex_shader(0), fragment_shader(0), program_shader(0) { }
+    bool init(const std::string vertex_shader_filename, const std::string fragment_shader_filename, const std::string &fragment_data_name);
+
+    void bind();
+    void free();
+    GLint attrib(const std::string &name) const;
+    GLint uniform(const std::string &name) const;
+    GLint bindVertexAttribArray(const std::string &name, VertexBufferObject& VBO) const;
+    GLuint create_shader_helper(GLint type, const std::string &shader_filename);
+    std::string read_glsl_file(const std::string &pathToFile);
+};</code></pre>
+</blockquote>
+
+<p>A Program is composed of two shaders: one vertex shader and one fragment shader. Each shader is initialized by calling <code>create_shader_helper</code> function on the <code>.glsl</code> file under the <code>../src/</code> folder. The task of reading <code>.glsl</code> files into <code>GLchar</code> is taken over by the <code>read_glsl_file</code> method. The Program <code>init()</code> will bind these two shader together into one on GPU side. Here are how these two shaders look like.</p>
+
+    <p>Vertex shader gets a <code>position</code> as input, which binds with VBO as we previously mentioned. It is in fact a column of the <code>3 X N</code> matrix, which represents a single vertex position in 3D. The output of this vertex shader is <code>f_color</code>. <code>f_color</code> is also the input to fragment shader for further rasterization. In addition, vertex shader also directly output to a GL variable<code>gl_Position</code> to identify the vertex position exists on GPU. There are also some global variables in the vertex shader, which declared as uniform.</p>
+    <blockquote>
+        <pre><code>uniform mat4 model;                 //the model matrix defined for the current vertex.
+uniform mat4 anim_model;            //the model matrix defined for the current vertex.  (The object is in animation mode)
+uniform mat4 control_point_model;   //is the model matrix defined for the control point of bezier curve
+uniform mat4 view;                  //the viewing matrix that change vertex from world coordinate system to camera coordinate system.
+uniform mat4 camera;                //the matrix defined for camera transformation.
+uniform mat4 proj;                  //the matrix defined for projection (perspective or orthogonal).
+uniform float time;                 //a float value of the time since the start of the program
+uniform bool draw_frame;            //the shader will draw frames when this variable is set true.
+uniform bool draw_bezier_curve;     //the shader will draw bezier curves for animation when this variable is set true.
+uniform int color_bit;              //the color_bit ranges from 0 to 14, different value represents different color.
+uniform int normal_type;            //the type of normal the application is using for rendering color (vertex normal or face normal).
+uniform int start_animation;        //whether or not the animation start button was pressed.
+uniform vec3 face_normal;           //face normal.
+uniform vec3 light_d;               //light direction.
+</code></pre>
+</blockquote>
+
+
+    <p>Fragment shader uses the <code>f_color</code> from vertex shader as input, and output <code>outColor</code> as the final output. It also takes a uniform boolean variable <code>click</code>. The reason of passing in this variable is that to indicate a triangle being clicked, we mark the triangle in blue color instead of its origin color. By checking this <code>click</code>  variable, program knows whether it should display blue color or not. </p>
+    <blockquote>
+<pre><code>out vec4 outColor;
+in vec3 f_color;
+uniform bool click;
+
+void main()
+{
+    outColor = ...
+}
+</code></pre>
+</blockquote>
+
+<h3>Editor</h3>
+<p>Editor class is used as a state machine to represent the current status of the editor. Below is the detail construction of Editor with comments.</p>
+<blockquote>
+<pre><code>class Editor {
+    public:
+        int mode;                                       // Current mode
+        int vertex_count;                               // Numbers of vertices in V
+        int normal_type;                                // type of normal for shading
+        bool obj_clicked;                               // Whether there is aobject being clicked
+        int ith_obj;                                    // which object is selected (for translate and animation)
+        float width, height;                            // width and height of screen
+        int camera_type;                                // perspective or orthogonal
+        int bezier_step;                                // from 0 to 4
+        int closest_control_point;                      // cloest control point from 0 to 3 (use for edit bezier curve)
+        std::vector&ltint&gt obj_index;                     // num of triangles for each type of obj
+
+        ...
+};
+</code></pre>
+</blockquote>
+<code>obj_index</code>  is a vector of int, where each int represents number of triangles for each type of object. for example, our editor can insert cube, bunny, bumpy cube, then this vector should be <code>[12, 1000, 1000]</code> because a cube has 12 triangles, a bunny has 1000 triangles, a bumpy cube has 1000 triangles... <br>
+<br>
+<p>below are properties for each object:</p>
+<blockquote>
+<pre><code>class Editor {
+    public:
+        ...
+        // each object has the following properties
+        std::vector<int> objects;                       // vector of index to obj_index
+        std::vector<int> color_bits;                    // vector of color_bit
+        std::vector<Eigen::MatrixXf> control_points;    // control point matrix (use for animation)
+        Eigen::MatrixXf V, N, VN;                       // vertices, face normals, vertex normals
+
+        Eigen::MatrixXf model, anim_model;              // model matrix
+        Eigen::MatrixXf translation, rotation, scaling; // translation matrix, rotation matrix, scaling matrix
+        ...
+};
+</code></pre>
+</blockquote>
+<code>objects</code>  is a vector of int. it indicates what type of each object is referring to the <code>obj_index</code>. for example, if the <code>obj_index</code> is <code>[12, 1000, 1000]</code> (a cube, a bunny and a bumpy cube) and our <code>objects</code> is <code>[0,0,1,2]</code> then it means that we have 2 cube, 1 bunny and 1 bumpy cube in the scene. Similar to <code>objects</code> , <code>color_bit</code>  is a vector of int. it indicates the color of each object. 
+<code>control_points</code>  is a <code>3 X 4k</code> matrix, where k is number of objects, <code>3 X 4</code> is the position of 4 control points in bezier curve <br><br>
+<p>below are properties for view control:</p>
+<pre><code>class Editor {
+    public:
+        ...
+        // for view control
+        int pause;
+        float alpha_shift, beta_shift;
+        Eigen::Matrix4f view;                           // view transformation matrix
+        Eigen::Matrix4f camera;                         // camera transformation matrix
+        Eigen::Matrix4f persp, orth;                    // projection
+        float radius;                                   // distance from camera to origin
+        Vector3f cam_pos;                               // current camera position
+        Vector2f p0, p1;                                // previous and current cursor position
+        ...
+};
+</code></pre>
+</blockquote>
+
+<p>below are properties for view animation:</p>
+<pre><code>class Editor {
+    public:
+        ...
+        // for animation
+        int start_animation;
+        int snap_num;
+        ...
+};</code></pre>
+</blockquote>
+
+<p>When the application start, you will see the scene below (red cube) as the default sence. by default the camera rotates arounf Y axis. You can pause this by pressing <code>SPACE</code>.</p>
+<video width="640" height="480" controls>
+  <source src="images/default.mp4" type="video/mp4">
+</video>
+
+
+<h2 id="ds">Operations</h2>
+<p>The following section will introduce all the operations supported by this application.</p>
+<h3>Object Insert</h3>
+<blockquote>
+<p> Instruction:
+<pre>press '1' on keyboard will insert a unit cube;<br>
+press '2' on keyboard will insert a bunny;<br>
+press '3' on keyboard will insert a bumpy cube;<br></pre>
+</p></blockquote>
+<video width="640" height="480" controls>
+  <source src="images/insert.mp4" type="video/mp4">
+</video>
+
+<h3>Object Control</h3>
+<blockquote>
+<p> Instruction:
+<pre>press 'O' on keyboard;<br>
+click on an object;<br>
+release the mouse;<br>
+press J,M to rotation on Y axis;<br>
+press H,N to rotation on Z axis;<br>
+press G,B to rotation on X axis;<br>
+press K,L to scale;<br></pre>
+</p></blockquote>
+<p> Rotate, Scale, Translate </p>
+<video width="640" height="480" controls>
+  <source src="images/translate1.mp4" type="video/mp4">
+</video>
+<p> Change shading </p>
+<video width="640" height="480" controls>
+  <source src="images/shading.mp4" type="video/mp4">
+</video>
+
+<h3>Camera & View Control</h3>
+<blockquote>
+<p> Instruction:
+<pre>press &#8593;,&#8595;,&#8592;,&#8594; to move position of camera (in a trackball);<br>
+scroll up or down to change the distance from camera to origin;<br></pre>
+</p></blockquote>
+<p> move camera </p>
+<video width="640" height="480" controls>
+  <source src="images/camera2.mp4" type="video/mp4">
+</video>
+<p> change radius </p>
+<video width="640" height="480" controls>
+  <source src="images/camera1.mp4" type="video/mp4">
+</video>
+
+<h3>Animation</h3>
+<blockquote>
+<p> Instruction:
+<pre>press 'U' on keyboard;<br>
+click on an object;<br>
+click on a place where you want to place the first control point;<br>
+click on a place where you want to place the second control point;<br>
+click on a place where you want to place the third control point;<br>
+click on a place where you want to place the forth control point;<br>
+press 'Z' to start or pause animation; <br>
+click on control point and don't release, drag the control point will edit the bezier curve; <br>
+click on other object to make animation for other object or see the control points if bezier curve has been contructed;</pre>
+</p></blockquote>
+<p> one object </p>
+<video width="640" height="480" controls>
+  <source src="images/animation1.mp4" type="video/mp4">
+</video>
+<p> multiple objects </p>
+<video width="640" height="480" controls>
+  <source src="images/animation2.mp4" type="video/mp4">
+</video>
+<p> Edit the bezier curve </p>
+<video width="640" height="480" controls>
+  <source src="images/animation3.mp4" type="video/mp4">
+</video>
+<p> different views </p>
+<video width="640" height="480" controls>
+  <source src="images/animation4.mp4" type="video/mp4">
+</video>
+
+<h3>Export SVG</h3>
+<blockquote>
+<p> Instruction:
+<pre>press 'X' anytime when you want to capture the scene;
+</pre>
+</p></blockquote>
+<figure>
+<img src="images/snap1.svg" style="width:640px;" />
+<img src="images/snap2.svg" style="width:640px;" />
+</figure>
+
+<h2 id="ds">How To Run?</h2>
+<p>Within the zx979 folder:</p>
+<blockquote>
+<pre><code>cd Assignment_2
+mkdir build
+cd build
+cmake -DCMAKE_BUILD_TYPE=Release ../
+make
+./Assignment2_bin</code></pre>
+</blockquote>
+
+
+</body>
+</html>
