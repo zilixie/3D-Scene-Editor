@@ -3,7 +3,7 @@ project website: https://zilixie.github.io/3D-Scene-Editor/
 
 A 3D scene editor implemented in C++ combined with OpenGL. It supports the functionalities of insert, tranlate, colorize, rotate, scale, animate, delete for triangle mesh objects in .OFF file format and it allows users to export scene into .svg files.
 
-![image](https://github.com/zilixie/3D-Scene-Editor/blob/master/images/camera2.gif)
+![image](https://github.com/zilixie/3D-Scene-Editor/blob/master/images/camera2.gif|width=640)
 ## How To Use
 >O: Start Translation mode.</br>
 >P: Start Deletion mode.</br>
