@@ -25,6 +25,7 @@ A 3D scene editor implemented in C++ combined with OpenGL. It supports the funct
 >Z: Start the animation if the bezier curve for an object was constructed. </br>
 >X: Take a screenshot and export scene to .svg file. </br>
 >Q: Quit the program.</br>
+<img src="https://github.com/zilixie/3D-Scene-Editor/blob/master/images/shading1.gif" width="720" height="450">
 
 ## Operations
 The following section will introduce all the operations supported by this application.
