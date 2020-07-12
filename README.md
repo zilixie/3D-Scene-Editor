@@ -61,11 +61,13 @@ The following section will introduce all the operations supported by this applic
 >press 'Z' to start or pause animation; </br>
 >click on control point and don't release, drag the control point will edit the bezier curve; </br>
 >click on other object to make animation for other object or see the control points if bezier curve has been contructed;
+#
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/B6HM3k94wjE/0.jpg)](https://www.youtube.com/watch?v=B6HM3k94wjE&feature=youtu.be)
 [![Everything Is AWESOME](https://img.youtube.com/vi/B6HM3k94wjE/10.jpg)](https://www.youtube.com/watch?v=B6HM3k94wjE "Everything Is AWESOME")
 
 ## Export SVG
 >Instruction:
 >press 'X' anytime when you want to capture the scene;
+#
 ![image](https://github.com/zilixie/3D-Scene-Editor/blob/master/images/snap1.svg)
 ![image](https://github.com/zilixie/3D-Scene-Editor/blob/master/images/snap2.svg)
