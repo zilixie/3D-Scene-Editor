@@ -61,7 +61,7 @@ The following section will introduce all the operations supported by this applic
 >press 'Z' to start or pause animation; </br>
 >click on control point and don't release, drag the control point will edit the bezier curve; </br>
 >click on other object to make animation for other object or see the control points if bezier curve has been contructed;
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://youtu.be/vrNOmPO1kWE)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=B6HM3k94wjE&feature=youtu.be)
 
 
 ## Export SVG
