@@ -72,3 +72,12 @@ The following section will introduce all the operations supported by this applic
 
 ![image](https://github.com/zilixie/3D-Scene-Editor/blob/master/images/snap1.svg)
 ![image](https://github.com/zilixie/3D-Scene-Editor/blob/master/images/snap2.svg)
+
+## How To Run?
+Within the zx979 folder:</br>
+>cd Assignment_3  
+>mkdir build  
+>cd build  
+>cmake -DCMAKE_BUILD_TYPE=Release ../  
+>make  
+>./Assignment3_bin
