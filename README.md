@@ -70,5 +70,5 @@ The following section will introduce all the operations supported by this applic
 >Instruction:
 >press 'X' anytime when you want to capture the scene;
 
-![image](https://github.com/zilixie/3D-Scene-Editor/blob/master/images/snap1.svg)
+![image](https://github.com/zilixie/3D-Scene-Editor/blob/master/images/snap1-resize.svg)
 ![image](https://github.com/zilixie/3D-Scene-Editor/blob/master/images/snap2.svg)
