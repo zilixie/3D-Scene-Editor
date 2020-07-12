@@ -28,13 +28,13 @@ A 3D scene editor implemented in C++ combined with OpenGL. It supports the funct
 The following section will introduce all the operations supported by this application.
 
 ## Object Insert
->Instruction:＜/br＞
+>Instruction:</br>
 >press '1' on keyboard will insert a unit cube;</br>
 >press '2' on keyboard will insert a bunny;</br>
 >press '3' on keyboard will insert a bumpy cube;</br>
 
 ## Object Control
->Instruction:＜/br＞
+>Instruction:</br>
 >press 'O' on keyboard;</br>
 >click on an object;</br>
 >release the mouse;</br>
